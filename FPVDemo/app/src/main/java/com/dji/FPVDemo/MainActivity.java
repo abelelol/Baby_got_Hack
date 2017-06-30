@@ -18,12 +18,27 @@ import android.widget.ToggleButton;
 import dji.common.camera.SettingsDefinitions;
 import dji.common.camera.SystemState;
 import dji.common.error.DJIError;
+import dji.common.error.DJIFlightControllerError;
+import dji.common.flightcontroller.virtualstick.YawControlMode;
+import dji.common.gimbal.CapabilityKey;
 import dji.common.product.Model;
 import dji.common.util.CommonCallbacks;
 import dji.sdk.base.BaseProduct;
 import dji.sdk.camera.Camera;
 import dji.sdk.camera.VideoFeeder;
 import dji.sdk.codec.DJICodecManager;
+
+import dji.common.gimbal.Rotation;
+import dji.sdk.gimbal.Gimbal;
+import dji.common.gimbal.RotationMode;
+import dji.common.util.DJIParamMinMaxCapability;
+import dji.sdk.flightcontroller.FlightController;
+import dji.sdk.products.Aircraft;
+import dji.common.flightcontroller.virtualstick.FlightControlData;
+import dji.common.flightcontroller.virtualstick.RollPitchControlMode;
+
+import static dji.common.flightcontroller.virtualstick.RollPitchControlMode.VELOCITY;
+
 
 public class MainActivity extends Activity implements SurfaceTextureListener,OnClickListener{
 
@@ -34,8 +49,8 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
     protected DJICodecManager mCodecManager = null;
 
     protected TextureView mVideoSurface = null;
-    private Button mCaptureBtn, mShootPhotoModeBtn, mRecordVideoModeBtn;
-    private ToggleButton mRecordBtn;
+    private Button mShootPhotoModeBtn, mRecordVideoModeBtn;
+    private ToggleButton mRecordBtn, mCaptureBtn;
     private TextView recordingTime;
 
     private Handler handler;
@@ -100,7 +115,6 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
             });
 
         }
-
     }
 
     protected void onProductChange() {
@@ -149,7 +163,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         mVideoSurface = (TextureView)findViewById(R.id.video_previewer_surface);
 
         recordingTime = (TextView) findViewById(R.id.timer);
-        mCaptureBtn = (Button) findViewById(R.id.btn_capture);
+        mCaptureBtn = (ToggleButton) findViewById(R.id.btn_capture);
         mRecordBtn = (ToggleButton) findViewById(R.id.btn_record);
         mShootPhotoModeBtn = (Button) findViewById(R.id.btn_shoot_photo_mode);
         mRecordVideoModeBtn = (Button) findViewById(R.id.btn_record_video_mode);
@@ -172,6 +186,17 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                     startRecord();
                 } else {
                     stopRecord();
+                }
+            }
+        });
+
+        mCaptureBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    captureAction();
+                } else {
+                    faceUp();
                 }
             }
         });
@@ -244,12 +269,9 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.btn_capture:{
-                captureAction();
-                break;
-            }
             case R.id.btn_shoot_photo_mode:{
-                switchCameraMode(SettingsDefinitions.CameraMode.SHOOT_PHOTO);
+                //switchCameraMode(SettingsDefinitions.CameraMode.SHOOT_PHOTO);
+                moveDrone();
                 break;
             }
             case R.id.btn_record_video_mode:{
@@ -259,6 +281,68 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
             default:
                 break;
         }
+    }
+
+    private void moveDrone(){
+        FlightController myFlight = ((Aircraft) FPVDemoApplication.getProductInstance()).getFlightController();
+        myFlight.setVirtualStickModeEnabled(true, new CommonCallbacks.CompletionCallback() {
+            @Override
+            public void onResult(DJIError djiError) {
+                if (djiError == null) {
+                    Log.d("RotateGimbal", "RotateGimbal successfully");
+                    showToast("IT WORKED");
+                } else {
+                    Log.d("PitchRangeExtension", "RotateGimbal failed");
+                    showToast("I HATE THIS PLS WORK");
+                }
+            }
+        });
+        myFlight.setRollPitchControlMode(RollPitchControlMode.VELOCITY);
+        FlightControlData myDirections = new FlightControlData(1, 0, 0, 0);
+        //for (int i = 0; i < 100; i++) {
+            myFlight.sendVirtualStickFlightControlData(myDirections, new CommonCallbacks.CompletionCallback() {
+                @Override
+                public void onResult(DJIError djiError) {
+                    if (djiError == null) {
+                        Log.d("RotateGimbal", "RotateGimbal successfully");
+                        showToast("IT WORKED");
+                    } else {
+                        Log.d("PitchRangeExtension", "RotateGimbal failed");
+                        showToast("I HATE THIS PLS WORK");
+                    }
+                }
+            });
+        //}
+    }
+
+    private void moveYaw(){
+        FlightController myFlight = ((Aircraft) FPVDemoApplication.getProductInstance()).getFlightController();
+        myFlight.setVirtualStickModeEnabled(true, new CommonCallbacks.CompletionCallback() {
+            @Override
+            public void onResult(DJIError djiError) {
+                if (djiError == null) {
+                    Log.d("RotateGimbal", "RotateGimbal successfully");
+                    showToast("IT WORKED");
+                } else {
+                    Log.d("PitchRangeExtension", "RotateGimbal failed");
+                    showToast("I HATE THIS PLS WORK");
+                }
+            }
+        });
+        myFlight.setYawControlMode(YawControlMode.ANGLE);
+        FlightControlData myDirections = new FlightControlData(0, 0, 180, 0);
+        myFlight.sendVirtualStickFlightControlData(myDirections, new CommonCallbacks.CompletionCallback() {
+            @Override
+            public void onResult(DJIError djiError) {
+                if (djiError == null) {
+                    Log.d("RotateGimbal", "RotateGimbal successfully");
+                    showToast("IT WORKED");
+                } else {
+                    Log.d("PitchRangeExtension", "RotateGimbal failed");
+                    showToast("I HATE THIS PLS WORK");
+                }
+            }
+        });
     }
 
     private void switchCameraMode(SettingsDefinitions.CameraMode cameraMode){
@@ -279,75 +363,138 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
             }
     }
 
+    private void faceUp(){
+        BaseProduct product = FPVDemoApplication.getProductInstance();
+        Rotation.Builder builder = new Rotation.Builder().mode(RotationMode.ABSOLUTE_ANGLE).time(2);
+        Gimbal gimbal = product.getGimbal();
+        Number maxValue = ((DJIParamMinMaxCapability) (gimbal.getCapabilities().get(CapabilityKey.ADJUST_PITCH))).getMax();
+        builder.pitch(maxValue.floatValue());
+        Rotation newAngle = builder.build();
+        gimbal.rotate(newAngle, new CommonCallbacks.CompletionCallback() {
+            @Override
+            public void onResult(DJIError djiError) {
+                if (djiError == null) {
+                    Log.d("RotateGimbal", "RotateGimbal successfully");
+                    showToast("IT WORKED");
+                } else {
+                    Log.d("PitchRangeExtension", "RotateGimbal failed");
+                    showToast("I HATE THIS PLS WORK");
+                }
+            }
+        });
+    }
     // Method for taking photo
     private void captureAction(){
+        BaseProduct product = FPVDemoApplication.getProductInstance();
+        Rotation.Builder builder = new Rotation.Builder().mode(RotationMode.ABSOLUTE_ANGLE).time(2);
+        Gimbal gimbal = product.getGimbal();
+        Number minValue = ((DJIParamMinMaxCapability) (gimbal.getCapabilities().get(CapabilityKey.ADJUST_PITCH))).getMin();
+        builder.pitch(minValue.floatValue());
+        Rotation newAngle = builder.build();
+        gimbal.rotate(newAngle, new CommonCallbacks.CompletionCallback() {
+            @Override
+            public void onResult(DJIError djiError) {
+                if (djiError == null) {
+                    Log.d("RotateGimbal", "RotateGimbal successfully");
+                    showToast("IT WORKED");
+                } else {
+                    Log.d("PitchRangeExtension", "RotateGimbal failed");
+                    showToast("I HATE THIS PLS WORK");
+                }
+            }
+        });
+        showToast(minValue.toString());
+//        final Camera camera = FPVDemoApplication.getCameraInstance();
+//        if (camera != null) {
+//
+//            SettingsDefinitions.ShootPhotoMode photoMode = SettingsDefinitions.ShootPhotoMode.SINGLE; // Set the camera capture mode as Single mode
+//            camera.setShootPhotoMode(photoMode, new CommonCallbacks.CompletionCallback(){
+//                    @Override
+//                    public void onResult(DJIError djiError) {
+//                        if (null == djiError) {
+//                            handler.postDelayed(new Runnable() {
+//                                @Override
+//                                public void run() {
+//                                    camera.startShootPhoto(new CommonCallbacks.CompletionCallback() {
+//                                        @Override
+//                                        public void onResult(DJIError djiError) {
+//                                            if (djiError == null) {
+//                                                showToast("take photo: success");
+//                                            } else {
+//                                                showToast(djiError.getDescription());
+//                                            }
+//                                        }
+//                                    });
+//                                }
+//                            }, 2000);
+//                        }
+//                    }
+//            });
+//        }
 
-        final Camera camera = FPVDemoApplication.getCameraInstance();
-        if (camera != null) {
-
-            SettingsDefinitions.ShootPhotoMode photoMode = SettingsDefinitions.ShootPhotoMode.SINGLE; // Set the camera capture mode as Single mode
-            camera.setShootPhotoMode(photoMode, new CommonCallbacks.CompletionCallback(){
-                    @Override
-                    public void onResult(DJIError djiError) {
-                        if (null == djiError) {
-                            handler.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    camera.startShootPhoto(new CommonCallbacks.CompletionCallback() {
-                                        @Override
-                                        public void onResult(DJIError djiError) {
-                                            if (djiError == null) {
-                                                showToast("take photo: success");
-                                            } else {
-                                                showToast(djiError.getDescription());
-                                            }
-                                        }
-                                    });
-                                }
-                            }, 2000);
-                        }
-                    }
-            });
-        }
     }
 
     // Method for starting recording
     private void startRecord(){
-
-        final Camera camera = FPVDemoApplication.getCameraInstance();
-        if (camera != null) {
-            camera.startRecordVideo(new CommonCallbacks.CompletionCallback(){
-                @Override
-                public void onResult(DJIError djiError)
-                {
-                    if (djiError == null) {
-                        showToast("Record video: success");
-                    }else {
-                        showToast(djiError.getDescription());
-                    }
+        FlightController myFlight = ((Aircraft) FPVDemoApplication.getProductInstance()).getFlightController();
+        myFlight.startTakeoff(new CommonCallbacks.CompletionCallback() {
+            @Override
+            public void onResult(DJIError djiError) {
+                if (djiError == null) {
+                    Log.d("TakeOff", "Take off successfully");
+                    showToast("TAKEOFF WORKED");
+                } else {
+                    Log.d("TakeOff", "Take off failed");
+                    showToast("I HATE THIS PLS WORK");
                 }
-            }); // Execute the startRecordVideo API
-        }
+            }
+        });
+//        final Camera camera = FPVDemoApplication.getCameraInstance();
+//        if (camera != null) {
+//            camera.startRecordVideo(new CommonCallbacks.CompletionCallback(){
+//                @Override
+//                public void onResult(DJIError djiError)
+//                {
+//                    if (djiError == null) {
+//                        showToast("Record video: success");
+//                    }else {
+//                        showToast(djiError.getDescription());
+//                    }
+//                }
+//            }); // Execute the startRecordVideo API
+//        }
     }
 
     // Method for stopping recording
     private void stopRecord(){
-
-        Camera camera = FPVDemoApplication.getCameraInstance();
-        if (camera != null) {
-            camera.stopRecordVideo(new CommonCallbacks.CompletionCallback(){
-
-                @Override
-                public void onResult(DJIError djiError)
-                {
-                    if(djiError == null) {
-                        showToast("Stop recording: success");
-                    }else {
-                        showToast(djiError.getDescription());
-                    }
+        FlightController myFlight = ((Aircraft) FPVDemoApplication.getProductInstance()).getFlightController();
+        myFlight.startLanding(new CommonCallbacks.CompletionCallback() {
+            @Override
+            public void onResult(DJIError djiError) {
+                if (djiError == null) {
+                    Log.d("TakeOff", "Take off successfully");
+                    showToast("TAKEOFF WORKED");
+                } else {
+                    Log.d("TakeOff", "Take off failed");
+                    showToast("I HATE THIS PLS WORK");
                 }
-            }); // Execute the stopRecordVideo API
-        }
+            }
+        });
+//        Camera camera = FPVDemoApplication.getCameraInstance();
+//        if (camera != null) {
+//            camera.stopRecordVideo(new CommonCallbacks.CompletionCallback(){
+//
+//                @Override
+//                public void onResult(DJIError djiError)
+//                {
+//                    if(djiError == null) {
+//                        showToast("Stop recording: success");
+//                    }else {
+//                        showToast(djiError.getDescription());
+//                    }
+//                }
+//            }); // Execute the stopRecordVideo API
+//        }
 
     }
 }

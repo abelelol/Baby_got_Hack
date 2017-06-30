@@ -18,22 +18,24 @@
       android:orientation="horizontal"
       android:layout_alignParentBottom="true"
          android:id="@+id/linearLayout">
-    <Button
+    <ToggleButton
         android:id="@+id/btn_capture"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_gravity="center_vertical"
         android:layout_height="wrap_content"
-        android:text="Capture" 
+        android:text="FACEDOWN"
+        android:textOff="FACEDOWN"
+        android:textOn="FACEUP"
         android:textSize="12sp"/>
 
     <ToggleButton
         android:id="@+id/btn_record"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Start Record"
-        android:textOff="Start Record"
-        android:textOn="Stop Record"
+        android:text="TAKEOFF"
+        android:textOff="TAKEOFF"
+        android:textOn="TOUCHDOWN"
         android:layout_weight="1"
         android:layout_gravity="center_vertical"
         android:textSize="12dp"
@@ -45,7 +47,7 @@
         android:layout_weight="1"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:text="Shoot Photo Mode"
+        android:text="MOVE DRONE"
         android:textSize="12sp"/>
 
     <Button
