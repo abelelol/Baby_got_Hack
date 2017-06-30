@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/home/amy/.android/build-cache/246a88b075bd4d9e687ba510e1dd8e31733e67f5/output/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
+        <dex dex="/home/amy/AndroidStudioProjects/android-vision/visionSamples/barcode-reader/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_a9f5dba9b271425948522ff4f3454b5a409f68f2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/amy/.android/build-cache/76d8bca97c0c98bd3ca5e3dca8b462386b12f1cf/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f3ee23ef25c9a8fe3d40246d0b7097267963a612">
+        <dex dex="/home/amy/AndroidStudioProjects/android-vision/visionSamples/barcode-reader/app/build/intermediates/pre-dexed/debug/classes_97ea36bd711969b0017726d465c74ac61d948915.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/amy/.android/build-cache/81165c31a8ecc087813969f00897fe296c8488ee/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="618485fef3ebe12127f7622abbc9b5b39057b5c2">
+        <dex dex="/home/amy/AndroidStudioProjects/android-vision/visionSamples/barcode-reader/app/build/intermediates/pre-dexed/debug/classes_fec1d88ee414aedbbaba81beaec66b7ce8611e32.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/amy/.android/build-cache/d07d44507ff17cd5abc4bfb2ccce8a883c4228a6/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3dee4ce5844d39d843d503fb8fe04e51e5bfffac">
+        <dex dex="/home/amy/AndroidStudioProjects/android-vision/visionSamples/barcode-reader/app/build/intermediates/pre-dexed/debug/classes_829edfc2307c5cd5489b8185e3158614e35c4cdc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/amy/.android/build-cache/fadbc6074d0b0bf0687a24c93a99dfca350f6a14/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
+        <dex dex="/home/amy/AndroidStudioProjects/android-vision/visionSamples/barcode-reader/app/build/intermediates/pre-dexed/debug/classes_6c892e358d49a4d7bbaf7743faa5cf020c3f1310.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/amy/.android/build-cache/b4f2c37da41150ccdd8fdf8d1162d8efe2f230de/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="23eb0d2998a782213b56168cbf23a0688b9111d9">
+        <dex dex="/home/amy/AndroidStudioProjects/android-vision/visionSamples/barcode-reader/app/build/intermediates/pre-dexed/debug/classes_e13ea6dfb7d6e0a4bc238a223990734b202949b9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/amy/.android/build-cache/56054cbbc3e86c05d3c4738ce3971b4fa8a62707/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
+        <dex dex="/home/amy/AndroidStudioProjects/android-vision/visionSamples/barcode-reader/app/build/intermediates/pre-dexed/debug/classes_4f96b641f0eb6e7d45bd97c794f428d1db88b400.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/amy/.android/build-cache/082ae21020f316b630e035c2e0700a5617a609ec/output/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
+        <dex dex="/home/amy/AndroidStudioProjects/android-vision/visionSamples/barcode-reader/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_a603cb3ddbd174caaebe20b17ee485a2e545a86f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/amy/.android/build-cache/2bdbeb1ce401cb51ef723be856be5aa54aa68110/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="670df81539ab71918d49b186598b7eff08ef6563">
+        <dex dex="/home/amy/AndroidStudioProjects/android-vision/visionSamples/barcode-reader/app/build/intermediates/pre-dexed/debug/classes_bf79d698abb923876aea357f090358b133b1302a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/amy/.android/build-cache/8509a170dc0cca8143ef4c7310c6373eba952b10/output/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
+        <dex dex="/home/amy/AndroidStudioProjects/android-vision/visionSamples/barcode-reader/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_2207b717970b75e8d970a5dab38cbb09d152e9fd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/amy/.android/build-cache/8509a170dc0cca8143ef4c7310c6373eba952b10/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
+        <dex dex="/home/amy/AndroidStudioProjects/android-vision/visionSamples/barcode-reader/app/build/intermediates/pre-dexed/debug/classes_1434f1cdea79626561056f4a51b9adab4e323aae.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/amy/.android/build-cache/246a88b075bd4d9e687ba510e1dd8e31733e67f5/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="/home/amy/AndroidStudioProjects/android-vision/visionSamples/barcode-reader/app/build/intermediates/pre-dexed/debug/classes_7de4ee0985746dba0d5bfd58f6e982d1ddd5e84f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/amy/.android/build-cache/89d3d79b4491bb30a23d5a3719620867fc475a86/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
+        <dex dex="/home/amy/AndroidStudioProjects/android-vision/visionSamples/barcode-reader/app/build/intermediates/pre-dexed/debug/classes_5957dec058277bb5fabb9f5a93a3aa398c684263.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/amy/.android/build-cache/e63d08cb5e6cd3d47219e2cb48129f08308e14c2/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
+        <dex dex="/home/amy/AndroidStudioProjects/android-vision/visionSamples/barcode-reader/app/build/intermediates/pre-dexed/debug/classes_627d0cecd2fef46e4d7b15afc371141252fa90fd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/amy/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.0/support-annotations-24.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
+        <dex dex="/home/amy/AndroidStudioProjects/android-vision/visionSamples/barcode-reader/app/build/intermediates/pre-dexed/debug/support-annotations-24.2.0_dc05c4e5dfd58bbd8a235e74e17e653ff4f90fe0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/amy/.android/build-cache/0647164f5a37f0878fd27129f70b1af0b036be94/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c755536e5a100d9c76c8ea0b72f76c018f7a9de2">
+        <dex dex="/home/amy/AndroidStudioProjects/android-vision/visionSamples/barcode-reader/app/build/intermediates/pre-dexed/debug/classes_2886a98de1aed313d956278ebebe6fdc0764d196.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/amy/.android/build-cache/e63d08cb5e6cd3d47219e2cb48129f08308e14c2/output/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
+        <dex dex="/home/amy/AndroidStudioProjects/android-vision/visionSamples/barcode-reader/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_8932ceb210a79bf2756eca17fe85aade964e6691.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/amy/.android/build-cache/8b382a626f30681f04232e20ad8ba59119b2fd13/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8a36d229011e75f0caef408e1adf0d3fd4d94e02">
+        <dex dex="/home/amy/AndroidStudioProjects/android-vision/visionSamples/barcode-reader/app/build/intermediates/pre-dexed/debug/classes_dd94714bf52d0b53f8e916f1b9154fffd3ea7f37.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/amy/.android/build-cache/89d3d79b4491bb30a23d5a3719620867fc475a86/output/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
+        <dex dex="/home/amy/AndroidStudioProjects/android-vision/visionSamples/barcode-reader/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.0_bd53dccaa1daf2dc0bd584176fc59eba70a9a503.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/amy/.android/build-cache/082ae21020f316b630e035c2e0700a5617a609ec/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
+        <dex dex="/home/amy/AndroidStudioProjects/android-vision/visionSamples/barcode-reader/app/build/intermediates/pre-dexed/debug/classes_1e9971b75ac67f6004b31d463c159e9513a28542.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/amy/.android/build-cache/634ffbc3a4dca7733021b16fd1edec40bd242c21/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="beac40bcc8a320a896dd15f5109cfcaea5e1e0e3">
+        <dex dex="/home/amy/AndroidStudioProjects/android-vision/visionSamples/barcode-reader/app/build/intermediates/pre-dexed/debug/classes_d0ab2f3c11973f39866a8e0dbaada8f212abebb2.jar" />
+    </item>
+
+</items>
