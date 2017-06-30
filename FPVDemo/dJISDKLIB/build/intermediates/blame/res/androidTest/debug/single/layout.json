@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/Max/Downloads/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/layout/dialog_login.xml",
+        "source": "/Users/Max/Downloads/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/bundles/debug/res/layout/dialog_login.xml"
+    },
+    {
+        "merged": "/Users/Max/Downloads/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/layout/log_dialog_view.xml",
+        "source": "/Users/Max/Downloads/Android-FPVDemo-master/FPVDemo/dJISDKLIB/build/intermediates/bundles/debug/res/layout/log_dialog_view.xml"
+    }
+]
