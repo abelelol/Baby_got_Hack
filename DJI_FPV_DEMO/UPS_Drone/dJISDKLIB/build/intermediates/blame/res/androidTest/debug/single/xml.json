@@ -1,10 +1,19 @@
 [
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\Max\\Desktop\\UPS_Hackathon\\Baby_got_Hack\\DJI_FPV_DEMO\\UPS_Drone\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\xml\\accessory_filter.xml",
         "source": "C:\\Users\\Max\\Desktop\\UPS_Hackathon\\Baby_got_Hack\\DJI_FPV_DEMO\\UPS_Drone\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\xml\\accessory_filter.xml"
     },
     {
         "merged": "C:\\Users\\David Zhao\\Desktop\\Baby_got_Hack\\DJI_FPV_DEMO\\UPS_Drone\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\xml\\accessory_filter.xml",
         "source": "C:\\Users\\David Zhao\\Desktop\\Baby_got_Hack\\DJI_FPV_DEMO\\UPS_Drone\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\xml\\accessory_filter.xml"
+=======
+        "merged": "/home/amy/Baby_got_Hack/DJI_FPV_DEMO/UPS_Drone/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/xml/accessory_filter.xml",
+        "source": "/home/amy/Baby_got_Hack/DJI_FPV_DEMO/UPS_Drone/dJISDKLIB/build/intermediates/bundles/debug/res/xml/accessory_filter.xml"
+    },
+    {
+        "merged": "/Users/Max/Desktop/UPS_Hackathon/Baby_got_Hack/DJI_FPV_DEMO/UPS_Drone/dJISDKLIB/build/intermediates/res/merged/androidTest/debug/xml/accessory_filter.xml",
+        "source": "/Users/Max/Desktop/UPS_Hackathon/Baby_got_Hack/DJI_FPV_DEMO/UPS_Drone/dJISDKLIB/build/intermediates/bundles/debug/res/xml/accessory_filter.xml"
+>>>>>>> 45ba87f4f12a29eac0d8373ef41f2a8675cfb965
     }
 ]
